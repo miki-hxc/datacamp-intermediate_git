@@ -1,0 +1,13 @@
+services:
+  datacamp-intermediate_git:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: datacamp-intermediate_git
+    environment:
+      - GRANT_SUDO=yes
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./intermediate_git:/home/jovyan/intermediate_git"
+    restart: unless-stopped
